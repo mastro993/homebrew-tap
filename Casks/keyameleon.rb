@@ -1,6 +1,6 @@
 cask "keyameleon" do
-  version "0.7.0"
-  sha256 "d13da8d1bd7346ae28846d80a240eacb0074c3fec5fbfc711f93f8b164a14594"
+  version "0.8.0"
+  sha256 "ff61a077d6b1389b0900eed97372e1ddac945247ab07c011604df3b4b74d1f5f"
 
   url "https://github.com/mastro993/Keyameleon/releases/download/v#{version}/Keyameleon-#{version}.dmg"
   name "Keyameleon"
