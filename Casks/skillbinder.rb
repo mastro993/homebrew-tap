@@ -1,0 +1,32 @@
+cask "skillbinder" do
+  version "0.2.0"
+  sha256 "889a97d33bfec0d899e5de0042dd214249fbeacfee6b9fe74a46327e520ee67c"
+
+  url "https://github.com/mastro993/SkillBinder/releases/download/v#{version}/skillbinder-#{version}-universal-apple-darwin.dmg"
+  name "SkillBinder"
+  desc "Manage a local library of agent skills"
+  homepage "https://github.com/mastro993/SkillBinder"
+
+  livecheck do
+    url "https://mastro993.github.io/SkillBinder/updates/v1/stable.json"
+    strategy :json do |json|
+      json["version"]
+    end
+  end
+
+  auto_updates true
+  conflicts_with cask: "skillbinder@beta"
+  depends_on macos: :tahoe
+
+  app "SkillBinder.app"
+  # The `skillbinder` command (ADR 0024); Settings reads it as installed by Homebrew.
+  binary "#{appdir}/SkillBinder.app/Contents/MacOS/skillbinder-cli", target: "skillbinder"
+
+  uninstall quit: "dev.fedemas.skillbinder"
+
+  zap trash: [
+    "~/Library/Application Support/SkillBinder",
+    "~/Library/Preferences/com.skillbinder.desktop.plist",
+    "~/Library/Preferences/dev.fedemas.skillbinder.plist",
+  ]
+end
