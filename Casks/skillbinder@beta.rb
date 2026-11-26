@@ -1,6 +1,6 @@
 cask "skillbinder@beta" do
-  version "0.1.1-beta.10"
-  sha256 "46a36ffde0956107b951eb205aebcd67cb02058831e8b6eb58393ec388ca05c4"
+  version "0.2.1-beta.11"
+  sha256 "11200e06404fceed4692afbca6b7a686d63f4a8c94bac01bcf91ebd01d3553c7"
 
   url "https://github.com/mastro993/SkillBinder/releases/download/v#{version}/skillbinder-#{version}-universal-apple-darwin.dmg"
   name "SkillBinder Beta"
@@ -22,10 +22,11 @@ cask "skillbinder@beta" do
   # The `skillbinder` command (ADR 0024); Settings reads it as installed by Homebrew.
   binary "#{appdir}/SkillBinder.app/Contents/MacOS/skillbinder-cli", target: "skillbinder"
 
-  uninstall quit: "com.skillbinder.desktop"
+  uninstall quit: "dev.fedemas.skillbinder"
 
   zap trash: [
     "~/Library/Application Support/SkillBinder",
     "~/Library/Preferences/com.skillbinder.desktop.plist",
+    "~/Library/Preferences/dev.fedemas.skillbinder.plist",
   ]
 end
