@@ -1,6 +1,6 @@
 cask "skillbinder@beta" do
-  version "0.2.1-beta.12"
-  sha256 "76740a07f04bfbc99156baf61b6609566a708cd641b357cb147eb39b686abc49"
+  version "0.2.1-beta.13"
+  sha256 "e4d0fa0e2ba478f73d3991d1551f40f87524061c80b63108d7db309fe911d924"
 
   url "https://github.com/mastro993/SkillBinder/releases/download/v#{version}/skillbinder-#{version}-universal-apple-darwin.dmg"
   name "SkillBinder Beta"
